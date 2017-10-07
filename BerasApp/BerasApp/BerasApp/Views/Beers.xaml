@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BerasApp.Behaviors"
+             x:Class="BerasApp.Views.Beers"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Quit" Command="{Binding QuitCommand}" Order="Secondary"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListGrid"
+                              RowHeight="80"
+                              SeparatorVisibility="Default"
+                              BackgroundColor="White"
+                              ItemsSource="{Binding ListBeers}"
+                              IsRefreshing="{Binding IsBusy}" 
+                              HasUnevenRows="True"
+                              IsPullToRefreshEnabled="True"
+                              RefreshCommand="{Binding GetCommand}"
+                              ItemSelected="ListGrid_ItemSelected">
+                <ListView.Behaviors>
+                    <local:ListViewBehavior Command="{Binding GetMoreCommand}"></local:ListViewBehavior>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell  x:Name="viewCell">
+                            <StackLayout Padding="20">
+                                <Label Text="{Binding Name}" Style="{StaticResource lblPrimary}"></Label>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Details" 
+                                              BindingContext="{Binding Source={x:Reference ListGrid}, Path=BindingContext}" 
+                                              Command="{Binding BeerDetailCommand}" 
+                                              CommandParameter="{Binding Source={x:Reference viewCell}, Path=BindingContext}" />
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BerasApp.Views.BeerDetails"
+             Title="{Binding Title}">
+
+    <StackLayout>
+        <Label Text="{Binding Beer.Brewery}"></Label>
+        <Label Text="{Binding Beer.ServingTemperature}"></Label>
+        <Label Text="{Binding Beer.NameDisplay}"></Label>
+        <Label Text="{Binding Beer.Description}"></Label>
+        <Label Text="{Binding Beer.Abv}"></Label>
+        <Label Text="{Binding Beer.IsOrganic}"></Label>
+    </StackLayout>
+
+    <ScrollView>
+        <Frame Margin="8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="1" Grid.Column="0" TextColor="Black" Text="Name"></Label>
+                <Label Grid.Row="2" Grid.Column="0" TextColor="Black" Text="Category"></Label>
+                <Label Grid.Row="3" Grid.Column="0" TextColor="Black" Text="Brewery"></Label>
+                <Label Grid.Row="4" Grid.Column="0" TextColor="Black" Text="Glass"></Label>
+                <Label Grid.Row="5" Grid.Column="0" TextColor="Black" Text="Organic?"></Label>
+                <Label Grid.Row="6" Grid.Column="0" TextColor="Black" Text="Serving Temperature"></Label>
+                <Label Grid.Row="7" Grid.Column="0" TextColor="Black" Text="ABV"></Label>
+                <Label Grid.Row="8" Grid.Column="0" TextColor="Black" Text="Description"></Label>
+
+
+                <Image Source="{Binding Beer.Labels.Large}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="110"></Image>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Beer.Name}"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Beer.Style.Category.Name}"></Label>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Brewery}"></Label>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Beer.Glass.Name}"></Label>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding Beer.IsOrganic}"></Label>
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding Beer.ServingTemperature}"></Label>
+                <Label Grid.Row="7" Grid.Column="1" Text="{Binding Beer.Abv}"></Label>
+                <Label Grid.Row="8" Grid.Column="1" Text="{Binding Beer.Description}"></Label>
+
+            </Grid>
+        </Frame>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BerasApp.Views.StyleDetails"
+             Title="{Binding Title}">
+    <ScrollView>
+        <Frame Margin="8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" TextColor="Black"  Text="Name"></Label>
+                <Label Grid.Row="1" Grid.Column="0" TextColor="Black"  Text="Short Name"></Label>
+                <Label Grid.Row="2" Grid.Column="0" TextColor="Black" Text="Category"></Label>
+                <Label Grid.Row="3" Grid.Column="0" TextColor="Black" Text="Min. IBU"></Label>
+                <Label Grid.Row="4" Grid.Column="0" TextColor="Black" Text="Max. IBU"></Label>
+                <Label Grid.Row="5" Grid.Column="0" TextColor="Black" Text="Min. ABV"></Label>
+                <Label Grid.Row="6" Grid.Column="0" TextColor="Black" Text="Max. ABV"></Label>
+                <Label Grid.Row="7" Grid.Column="0" TextColor="Black" Text="Min. SRM"></Label>
+                <Label Grid.Row="8" Grid.Column="0" TextColor="Black" Text="Max. SRM"></Label>
+                <Label Grid.Row="9" Grid.Column="0" TextColor="Black" Text="Min. Original Gravity"></Label>
+                <Label Grid.Row="10" Grid.Column="0" TextColor="Black" Text="Min. Final Gravity"></Label>
+                <Label Grid.Row="11" Grid.Column="0" TextColor="Black" Text="Max. Final Gravity"></Label>
+                <Label Grid.Row="12" Grid.Column="0" TextColor="Black" Text="Description"></Label>
+
+
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Style.Name}"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Style.ShortName}"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Style.Category.Name}"></Label>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Style.IbuMin}"></Label>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Style.IbuMax}"></Label>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding Style.AbvMin}"></Label>
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding Style.AbvMax}"></Label>
+                <Label Grid.Row="7" Grid.Column="1" Text="{Binding Style.SrmMin}"></Label>
+                <Label Grid.Row="8" Grid.Column="1" Text="{Binding Style.SrmMax}"></Label>
+                <Label Grid.Row="9" Grid.Column="1" Text="{Binding Style.OgMin}"></Label>
+                <Label Grid.Row="10" Grid.Column="1" Text="{Binding Style.FgMin}"></Label>
+                <Label Grid.Row="11" Grid.Column="1" Text="{Binding Style.FgMax}"></Label>
+                <Label Grid.Row="12" Grid.Column="1" Text="{Binding Style.Description}"></Label>
+
+
+            </Grid>
+        </Frame>
+    </ScrollView>
+</ContentPage>
